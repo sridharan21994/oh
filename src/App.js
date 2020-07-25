@@ -3,7 +3,7 @@ import './App.css';
 import logo from './logo.svg';
 import MovieList from './components/movie-list/index.js';
 
-const title = "Movie List";
+const title = "Open House";
 
 class App extends Component {
   render() {

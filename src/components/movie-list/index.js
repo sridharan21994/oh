@@ -1,14 +1,16 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import renderList from '../list-items';
+import data from './mock';
 import "./index.css";
 
 export default function MovieList() {
 
-  // const [MoviesList, setMoviesList] = useState(null);
+  const [MoviesList, setMoviesList] = useState(null);
   const [Year, setYear] = useState('');
-  // const [Pagination, setPagination] = useState(1);
-  // const [pagers, setpagers] = useState(1);
+  const [Pagination, setPagination] = useState(1);
+  const [pagers, setpagers] = useState(1);
   const [AllItems, setAllItems] = useState(null);
+  const limit = 5;
   let Timer = null;
 
   const callApi = (year) => {    
@@ -16,18 +18,21 @@ export default function MovieList() {
     .then(res => res.json())
     .then(response => {
       if (response && response.items) {
-        
-        const total = Math.ceil(response.items.length / 3);
+      init(response); 
+      }
+    });
+  };
+
+  const init = (response) => {
+        const total = Math.ceil(response.items.length / limit);
         const pagersList = [];
         for (let i = 1; i <= total; i++) {
           pagersList.push(i);
         }
-        // setpagers(pagersList);
+        setpagers(pagersList);
         setAllItems(response.items);   
-        // setAllItems(response.items);
-      }
-    });
-  };
+        setMoviesList(response.items.slice(1, limit + 1));
+  }
 
   const changeYear = (event) => {
     setYear(event.target.value);
@@ -38,34 +43,42 @@ export default function MovieList() {
     }, 1000, event.target.value);
   }
 
+  useEffect(() => {
+    return () => {
+      clearTimeout(Timer);
+    }
+  }, []);
 
 
-  // const changePager = (index) => {
-  //   setPagination(index);
-  //   // setAllItems(AllItems.slice(index, 3));
-  // }
+
+  const changePager = (index) => {
+    const from = ((index -1) * limit);
+    const to = (index === pagers.length) ? AllItems.length : from + limit;
+    setMoviesList(AllItems.slice(from, to));
+    setPagination(index);
+  }
 
   
 
-  // const renderPagination = (i, index) => {
-  //   return (<span key={index} className={ i === Pagination ? 'selected' : 'normal'  } onClick={changePager(i)}>{i}</span>);
-  // }
+  const renderPagination = (i, index) => {
+    return (<span key={index} className={ i === Pagination ? 'selected' : 'normal'  } onClick={e => changePager(i)}>{i}</span>);
+  }
 
   return (
     <div className="layout-column align-items-center mt-50">
       <section className="layout-row align-items-center justify-content-center">
-        <input type="text" className="large" placeholder="Enter Year eg 2015" data-testid="app-input" value={Year} onChange={changeYear}/>
+        <input type="text" className="large" placeholder="Search" data-testid="app-input" value={Year} onChange={changeYear}/>
         {/* <button className="" data-testid="submit-button" onClick={callApi}>Search</button> */}
       </section>
 
       <ul className="mt-50 styled" data-testid="movieList">
-        {AllItems && AllItems.length > 0 && AllItems.map(renderList)}
+        {MoviesList && MoviesList.length > 0 && MoviesList.map(renderList)}
       </ul>
 
       {AllItems && AllItems.length < 1 && <div className="mt-50 slide-up-fade-in" data-testid="no-result">No Results Found!</div>}
-      {/* {AllItems && AllItems.length > 0 && <div>
+      {MoviesList && MoviesList.length > 0 && <div style={{margin: '20px'}}>
         {pagers.map(renderPagination)}
-      </div>} */}
+      </div>}
     </div>
   );
 }

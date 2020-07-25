@@ -1,0 +1,19 @@
+.icon {
+    width: 180px;
+    height: 180px;
+    margin-right: 20px;
+    float: left;
+    clear: both;
+}
+
+.selected {
+    background-color: #ef5b33;
+    color: #fff;
+}
+
+.selected, .normal {
+    margin: 10px;
+    padding: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+}

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1595519435024" clover="3.2.0">
+  <project timestamp="1595519435024" name="All files">
+    <metrics statements="36" coveredstatements="14" conditionals="35" coveredconditionals="9" methods="23" coveredmethods="7" elements="94" coveredelements="30" complexity="0" loc="36" ncloc="36" packages="2" files="4" classes="4">
+      <package name="src">
+        <metrics statements="24" coveredstatements="2" conditionals="25" coveredconditionals="0" methods="17" coveredmethods="1"/>
+        <file name="App.js" path="/Users/sridharanjayabal/Documents/f438ff9c-4fb7-480c-8814-2a07db59d6b4/src/App.js">
+          <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+          <line num="6" count="1" type="stmt"/>
+          <line num="10" count="4" type="stmt"/>
+        </file>
+        <file name="index.js" path="/Users/sridharanjayabal/Documents/f438ff9c-4fb7-480c-8814-2a07db59d6b4/src/index.js">
+          <metrics statements="7" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="1" coveredmethods="0"/>
+          <line num="1" count="0" type="stmt"/>
+          <line num="2" count="0" type="stmt"/>
+          <line num="3" count="0" type="stmt"/>
+          <line num="4" count="0" type="stmt"/>
+          <line num="5" count="0" type="cond" truecount="0" falsecount="4"/>
+          <line num="7" count="0" type="stmt"/>
+          <line num="8" count="0" type="stmt"/>
+        </file>
+        <file name="registerServiceWorker.js" path="/Users/sridharanjayabal/Documents/f438ff9c-4fb7-480c-8814-2a07db59d6b4/src/registerServiceWorker.js">
+          <metrics statements="15" coveredstatements="0" conditionals="21" coveredconditionals="0" methods="15" coveredmethods="0"/>
+          <line num="1" count="0" type="stmt"/>
+          <line num="21" count="0" type="stmt"/>
+          <line num="118" count="0" type="cond" truecount="0" falsecount="3"/>
+          <line num="120" count="0" type="cond" truecount="0" falsecount="4"/>
+          <line num="121" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="124" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="125" count="0" type="stmt"/>
+          <line num="127" count="0" type="stmt"/>
+          <line num="128" count="0" type="cond" truecount="0" falsecount="4"/>
+          <line num="132" count="0" type="stmt"/>
+          <line num="135" count="0" type="stmt"/>
+          <line num="136" count="0" type="stmt"/>
+          <line num="137" count="0" type="cond" truecount="0" falsecount="4"/>
+          <line num="138" count="0" type="stmt"/>
+          <line num="139" count="0" type="cond" truecount="0" falsecount="2"/>
+        </file>
+      </package>
+      <package name="src.components.movie-list">
+        <metrics statements="12" coveredstatements="12" conditionals="10" coveredconditionals="9" methods="6" coveredmethods="6"/>
+        <file name="index.js" path="/Users/sridharanjayabal/Documents/f438ff9c-4fb7-480c-8814-2a07db59d6b4/src/components/movie-list/index.js">
+          <metrics statements="12" coveredstatements="12" conditionals="10" coveredconditionals="9" methods="6" coveredmethods="6"/>
+          <line num="6" count="10" type="stmt"/>
+          <line num="7" count="10" type="stmt"/>
+          <line num="9" count="10" type="stmt"/>
+          <line num="10" count="3" type="stmt"/>
+          <line num="11" count="3" type="stmt"/>
+          <line num="13" count="3" type="cond" truecount="3" falsecount="1"/>
+          <line num="14" count="3" type="stmt"/>
+          <line num="19" count="10" type="stmt"/>
+          <line num="20" count="3" type="stmt"/>
+          <line num="23" count="10" type="stmt"/>
+          <line num="24" count="7" type="stmt"/>
+          <line num="27" count="10" type="stmt"/>
+        </file>
+      </package>
+    </metrics>
+  </project>
+</coverage>
